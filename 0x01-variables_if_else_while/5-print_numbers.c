@@ -4,7 +4,7 @@
  * main - entry point
  *
  * Description: Print numbers 0 to 9 on one line
- * Return: 0
+ * Return: 0123456789
  */
 int main(void)
 {
