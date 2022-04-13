@@ -46,6 +46,6 @@ fib1_half2 = fib2_half2;
 fib2_half1 = half1;
 fib2_half2 = half2;
 }
-print("\n");
+printf("\n");
 return (0);
 }
