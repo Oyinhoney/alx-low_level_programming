@@ -8,10 +8,8 @@
 char *rot13(char *str)
 {
 	char *hold = str;
-	char word[] =
-		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot13[] =
-"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabxdefghijklm";
+	char word[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot13[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabxdefghijklm";
 
 	while (*str != '\0')
 	{
