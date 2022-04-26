@@ -8,12 +8,12 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	int count = 0, bicycle;
+	int count = 0, flag;
 	char *start = accept;
 
 	while (*s)
 	{
-		bicycle = 0;
+		flag = 0;
 		while (*accept)
 		{
 			if (*accept == *s)
@@ -26,7 +26,7 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		s++
 			accept = start;
-		if (bicycle == 0)
+		if (flag == 0)
 			break;
 	}
 	return (count);
