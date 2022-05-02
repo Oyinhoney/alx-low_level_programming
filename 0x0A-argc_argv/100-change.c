@@ -1,56 +1,54 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <stdlin.h>
 #include <ctype.h>
-
 /**
- * main - prints the minimum number of coins
- * to make change for an amount of money
- * @argc: n args
- * @argv: arr args
- * Return: 0
+ * calc_change - calculates the change
+ * @cent: the original money given
+ * Return: int value of how many coins required
+ */
+int calc_change(int cent)
+{
+	int coins[5] = {25, 10, 5, 2, 1};
+	int i;
+	int count = 0;
+
+	for (i = 0; i < 5; i++)
+	{
+		if (cent / coins[i] >= 1 && cent % coins[i] == 0)
+		{
+			count = count + (cent / coins[i]);
+			return (count);
+		}
+		else if (cent / coins[i] >= 1 && cent % coins[i] != 0)
+		{
+			count = count + (cent / coins[i]);
+			cent = cent % coins[i];
+		};
+	};
+	return (count);
+
+}
+/**
+ * main -main entry
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: always 0
  */
 int main(int argc, char *argv[])
 {
-	int value, c;
-
-	c = 0;
 	if (argc != 2)
 	{
-		printf("Error\n")
-			return (1);
+		printf("Error\n");
+		return (1);
 	}
-	value = atoi(argv[1]);
-	if (value < 0)
+	else if (atoi(argv[1]) < 0)
 	{
-		printf("%d\n", 0);
+		printf("0\n");
 		return (0);
 	}
-	if (value % 25 >= 0)
+	else
 	{
-		c += value / 25;
-		value = value % 25;
-	}
-	if (value % 10 >= 0)
-	{
-		c += value / 10;
-		value = value % 10;
-	}
-	if (value % 5 >= 0)
-	{
-		c += value / 5;
-		value = value % 5;
-	}
-	if (value % 2 >= 0)
-	{
-		c += value / 2;
-		value = value % 2;
-	}
-	if (value % 1 >= 0)
-	{
-		c += value / 1;
-	}
-	printf("%d\n", c);
-	return (0);
+		printf("%d\n", calc_change(atoi(argv[1])));
+		return (0);
+	};
 }
-
