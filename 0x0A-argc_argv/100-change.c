@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlin.h>
+#include <stdlib.h>
 #include <ctype.h>
 /**
  * calc_change - calculates the change
