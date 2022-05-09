@@ -24,7 +24,7 @@ char *_memset(char *s, char b, unsigned int n)
  * @size: bytes
  * Return: pointer
  */
-void *_calloc(unsigned int nmemb, unsigned int size);
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *p;
 
