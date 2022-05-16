@@ -1,8 +1,11 @@
+#include "variadic_functions.h"
+#include <stdarg.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
  * print_numbers - prints all numbers with a separator
- * @separator: separe numbers
+ * @separator: separate numbers
  * @n: int, number of undefined arguments
  */
 
