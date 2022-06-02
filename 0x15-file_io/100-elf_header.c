@@ -1,4 +1,4 @@
-#include <elf.h>
+#include "main.h"
 
 /*
  * File: 100-elf_header.c
