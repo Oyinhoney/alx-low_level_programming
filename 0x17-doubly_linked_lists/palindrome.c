@@ -1,45 +1,52 @@
 #include <stdio.h>
-
-char is_palindrome(unsigned int num);
-/**
- * main - entry point to find palindrome program
- *
- * Return: always 0
- */
-int main(void)
+#include <stdlib.h>
+#include <string.h>
+int fnd(char buffer[])
 {
-	unsigned int d1, d2, temp, max;
-
-	max = 0;
-	for (d1 = 100; d1 <= 999; d1++)
-	{
-		for (d2 = 100; d2 <= 999; d2++)
-		{
-			temp = d1 * d2;
-			if (is_palindrome(temp))
-				max = (temp > max) ? temp : max;
-		}
-	}
-	printf("Largest palindrome of 3 digit numbers is: %d\n", max);
+	if (buffer[0] != buffer[5])
+		return (0);
+	else if (buffer[1] != buffer[4])
+		return (0);
+	else if (buffer[2] != buffer[3])
+		return (0);
+	else
+		return (1);
 }
 
-
-/**
-  * is_palindrome - A function that checks if list is a palindrome.
-  * @num: The number to check.
-  * Return: 1 if number is a palindrome, or 0 if not.
-  */
-char is_palindrome(unsigned int num)
+void findpa(void)
 {
-	unsigned int reverse = 0, rem = 0, n = num;
+	int a = 999;
+	int b = 999;
+	int c = 1;
+	char buffer[7];
+	int d;
+	int flag = 1;
+	while (a > 0)
 
-	while (n != 0)
 	{
-		rem = n % 10;
-		reverse = reverse * 10 + rem;
-		n /= 10;
+	c = a * b;
+	snprintf(buffer, 7, "%d", c);
+	d = fnd(buffer);
+	if (d == 1)
+	{
+		printf("%d * %d = %s\n", a, b, buffer);
+		printf("____%s___\n", buffer);
 	}
-	if (reverse == num)
-		return (1);
+	b = b - 1;
+	if (b == 99)
+	{
+		b = 999;
+		flag++;
+	}
+	if (flag % 2 == 0)
+		a = a - 1;
+	flag = 1;
+	}
+}
+int main(void)
+{
+
+
+	findpa();
 	return (0);
 }
